@@ -24,3 +24,7 @@ Or by hand:
 The windows can show your real weather. It's off by default because it sends your IP address to `ipapi.co` for a rough location, then asks Open-Meteo for the current conditions. To turn it on, set `const WEATHER = true;` at the top of `mods/office/main.js`. Nothing else contacts the network, and the mod runs no programs.
 
 See [RECIPE.md](RECIPE.md) for everything it does and how it's built.
+
+## License
+
+MIT. Do whatever you like with it.
