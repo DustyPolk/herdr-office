@@ -1,0 +1,5 @@
+{
+  "layout:office": {
+    "ctrl-shift-i": "layout.toggle:office"
+  }
+}
