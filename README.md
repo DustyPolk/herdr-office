@@ -1,6 +1,6 @@
 # Office for Herdr
 
-A [Herdr](https://herdr.dev) layout with a pixel-art office above your terminals. Every coding agent is a coworker. They type at their desks while working, hang out at the water cooler when idle, nap on the couch, raise a hand when blocked, and cheer in confetti when done. Sub-agents show up as interns, remote agents join by video call, and a cat naps on empty keyboards.
+A [Herdr](https://herdr.dev) layout with a cozy pixel-art office above your terminals. Every coding agent is a chibi coworker. They type at their desks while working, sip water at the cooler when idle, nap on the couch, wave for help when blocked, and cheer in confetti when done. Sub-agents show up as tiny animal interns in neckties, remote agents join by video call, and a cat naps on empty desks.
 
 ![Office](preview.png)
 
@@ -22,6 +22,10 @@ Or by hand:
 ## Weather
 
 The windows can show your real weather. It's off by default because it sends your IP address to `ipapi.co` for a rough location, then asks Open-Meteo for the current conditions. To turn it on, set `const WEATHER = true;` at the top of `mods/office/main.js`. Nothing else contacts the network, and the mod runs no programs.
+
+## Art
+
+The sprites were made with [PixelLab](https://pixellab.ai) and live in `art/` at their original size. `python3 tools/build-assets.py` (needs ImageMagick 7) turns them into what the mod loads: `mods/office/assets/` and `mods/office/sprites.js`. Both are checked in, so you only need to run it after changing the art.
 
 See [RECIPE.md](RECIPE.md) for everything it does and how it's built.
 
