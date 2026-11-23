@@ -15,7 +15,7 @@ The window is Herdr's default arrangement with one strip added. From top to bott
 
 On the left is Herdr's sidebar, with the spaces list only. The agents list is gone because the office shows the agents.
 
-The office is drawn with pixel-art sprites: soft pastel furniture with dark outlines, chibi coworkers, a cat. One art unit is `P` px and one sprite pixel is half a unit: `P` is 3 below 210px of strip height, 4 up to 330px and 6 above, so a sprite pixel is a whole 2px or 3px on screen except in the shortest strip. The floor line sits 30px above the strip's bottom edge.
+The office is drawn with pixel-art sprites: soft pastel furniture with dark outlines, chibi coworkers, a cat. One art unit is `P` px and one sprite pixel is half a unit: `P` is 3 below 210px of strip height, 4 up to 330px and 6 above, so a sprite pixel is a whole 2px or 3px on screen except in the shortest strip. A narrow strip can make `P` smaller still (see the room layout). The floor line sits 30px above the strip's bottom edge.
 
 - **Wall.** Cream `#f8ecdb`, with a wainscot band `#f0dcc2` 9 units tall (thin slats every 28px) and a baseboard `#b8906e`. Along it run, left to right over the room:
   - windows 120px wide with white trim, pastel curtains and a potted flower on the sill
@@ -34,7 +34,7 @@ The office is drawn with pixel-art sprites: soft pastel furniture with dark outl
   - the kitchen: a counter with a steaming coffee machine, mugs and donuts; a water cooler on a round pink rug; a lavender couch
   - a floor lamp, a cat tree with a food bowl and a ball of yarn, and a monstera with a face on its pot
 
-  When the strip is too narrow, the umbrella stand, the lamp and the cat tree go, in that order. When it's wider than the room, the wall on either side fills with furniture and more windows, alternating: a bookshelf, a fish tank, a claw machine, a vending machine, a fridge, an arcade cabinet and so on.
+  When the strip is too narrow, the umbrella stand, the lamp and the cat tree go, in that order. If the room still doesn't fit, `P` steps down through 4, 3 and 2 until it does, and below 2 it shrinks to exactly the width (in quarter steps, softer pixels), so the whole room is always on screen. When it's wider than the room, the wall on either side fills with furniture and more windows, alternating: a bookshelf, a fish tank, a claw machine, a vending machine, a fridge, an arcade cabinet and so on.
 - **Desks.** At least 3. Past 6 agents, a second row appears half a slot over and 10 units further back. Desks come in six colors, and the cat-eared swivel chairs in four. Each desk has:
   - a monitor with a gold desk bell and a small toy on top (a duck, a succulent, a robot…)
   - a keyboard, and a mug with a face, colored by the agent's program: Claude `#d97757`, Codex `#e8e8e8`, Gemini `#4f86f7`, Cursor `#4a4a55`, OpenCode `#58b368`, Amp `#9b6bdc`

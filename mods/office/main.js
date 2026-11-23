@@ -274,9 +274,22 @@ export default class Office extends View {
     setAgentOrder(list.map((a) => a.address));
 
     // Whole sprite pixels where the strip allows: 2px each by default, 3px when it's tall.
-    A.setScale(H < 210 ? 3 : H < 330 ? 4 : 6);
+    // Then step down until the room fits the width; below the smallest whole step, scale exactly to fit.
     const deskCount = Math.max(MIN_DESKS, here.length, ...Object.values(this.desk).map((i) => i + 1));
-    const g = (this.g = this.geometry(W, H, deskCount));
+    const tallest = H < 210 ? 3 : H < 330 ? 4 : 6;
+    const fits = () => this.geometry(W, H, deskCount);
+    let g;
+    for (const p of [6, 4, 3, 2].filter((p) => p <= tallest)) {
+      A.setScale(p);
+      g = fits();
+      if (g.end - g.start <= W - 24) break;
+    }
+    if (g.end - g.start > W - 24) {
+      // Fully trimmed, the row's width grows linearly with the scale.
+      A.setScale(Math.max(0.5, Math.floor((A.P * (W - 24) / (g.end - g.start)) * 4) / 4));
+      g = fits();
+    }
+    this.g = g;
     this.seat(here, g.door, cx);
     this.cast(list);
     this.track(list, now, cx);
